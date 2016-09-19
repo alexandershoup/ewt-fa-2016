@@ -1,0 +1,55 @@
+html, body {
+	margin:0;
+	padding:0;
+	font-family:'Open Sans', sans-serif;
+}
+
+ul {
+	list-style:none;
+	margin: 0;
+	columns: 250px;
+	column-gap: 0px;
+	-webkit-padding-start: 0;
+}
+
+li {
+	break-inside: avoid;
+	background-color: CornflowerBlue;
+	padding: 5px;
+	border: 2px solid white;
+}
+
+figure {
+	margin: 0;
+}
+
+figcaption {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin: 0;
+}
+
+a {
+	word-wrap: break-word;
+	color: black;
+}
+
+a:hover {
+	color:white;
+}
+
+img {
+	float: left;
+	max-width: 100vw;
+}
+
+time::before {
+	content: "Date: ";
+}
