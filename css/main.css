@@ -1,3 +1,16 @@
 * {
     font-family: monospace;
 }
+
+h4  {
+    margin-left: 1em;
+}
+
+h5 {
+    margin-left: 2em;
+}
+
+.page-content {
+    background-color: LightSalmon;
+    width: 100%;
+}
