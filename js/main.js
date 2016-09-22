@@ -6,7 +6,6 @@ $(document).ready(function () {
     var level = 0;
     var pagecontent = [];
 
-
 function pageLoader(data) {
 console.log(level);
     console.log(data);
@@ -25,11 +24,9 @@ console.log(level);
         container.appendChild(headline);
         document.querySelector('.page-content').appendChild(container);
 
-
         if (item.type == 'dir') {
             // level++;
             $.getJSON(item.url, pageLoader);
         }
-
     }
 }
