@@ -3,10 +3,16 @@ $(document).ready(function () {
     $.getJSON(url, pageLoader);
 });
 
+$.ajaxSetup({
+async: false
+});
+
     var level = 0;
     var pagecontent = [];
 
 function pageLoader(data) {
+    var brk = document.createElement('br');
+    document.querySelector('.page-content').appendChild(brk);
 console.log(level);
     console.log(data);
     level = 0;
@@ -17,8 +23,11 @@ console.log(level);
         console.log(item);
         var container = document.createElement('div');
         var html_link = document.createElement('a');
+        if (item.type == 'file') {
+            html_link.href = item.html_url;
+        }
         html_link.href = item.html_url;
-        html_link.innerText = item.name + " " + level;
+        html_link.innerText = item.name;
         var headline = document.createElement('h3');
         headline.appendChild(html_link);
         container.appendChild(headline);
