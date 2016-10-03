@@ -1,0 +1,22 @@
+$breakTablet: 760px;
+$breakDesktop: 1000px;
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transition() {
+  transition: all 0.2s ease;
+}
+
+%callout-base {
+  padding: 1.2rem;
+  border-radius: 6px;
+  border-width: 3px;
+  border-style: solid;
+  margin: 1rem 0;
+}

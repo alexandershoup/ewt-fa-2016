@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>The Elephant &amp; the Monkey - a Picture Demo</title>
+    <link href='http://fonts.googleapis.com/css?family=Fauna+One|Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+
+    <script>
+    // Picture element HTML5 shiv
+    document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.min.js" async></script>
+
+</head>
+
+<body>
+    <main class="main" role="main">
+        <h1 class="main-title">The Elephant<br>&amp; the Monkey</h1>
+        <figure class="featured-image">
+            <picture>
+                <source media="(min-width: 800px)" srcset="images/elemonkey-wide.jpg, images/elemonkey-wide-2x.jpg 2x">
+                <source media="(min-width: 600px)" srcset="images/elemonkey-tall.jpg, images/elemonkey-tall-2x.jpg 2x">
+                <img src="images/elemonkey-square.jpg" alt="Elephant and Monkey" srcset="images/elemonkey-square.jpg, images/elemonkey-square-2x.jpg 2x">
+            </picture>
+        </figure>
+                <p>When I was a child we would go to the summer house of my grandparents every summer. It was an idyllic place on the northern shores of Sjælland in Denmark, and we would spend lazy days basking in the sun, playing in the yard, or fighting the waves on the sandy beaches.</p>
+                <p>In the summer house were two old wooden toys: An elephant and a monkey. They were amazingly articulated and could be made to do tricks. The elephant could balance on two legs and even on the tip of its trunk. The monkey could dangle from anything it could get a grip on with any of its four limbs.</p>
+                <p>The elephant and the monkey were both designed by a Danish jeweller named Kaj Bojesen as part of a series of child-friendly toys. They were close to unbreakable and easy to mend. Made from natural woods and colored and protected with food-grade materials like cooking oil they were also perfectly safe for children to play with.</p>
+                <p>Those summer days in Denmark are long gone, but the memories still remain: On my mantle sits my own elephant and monkey. And some times, when we are not looking, they get up to all sorts of mayhem.</p>
+            </main>
+        </body>
+        </html>

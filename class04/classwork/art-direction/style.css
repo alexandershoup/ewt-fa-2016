@@ -1,0 +1,54 @@
+/* Resets */
+figure {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Main Styles */
+.main {
+    max-width: 55em;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.main-title {
+    font-family:'Playfair Display', Georgia, serif;
+    font-size: 2.4em;
+    font-weight: normal;
+    margin-bottom: 1em;
+}
+
+p {
+    font-family: 'Fauna One', Georgia, serif;
+    font-size: 1em;
+    line-height: 1.4em;
+    max-width: 540px;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 375px) {    
+    .featured-image {
+        float: right;
+        width: 50%;
+        margin: 0 0 1em 1em;
+    }
+}
+
+@media screen and (min-width: 600px) {    
+    .featured-image {
+        width: 33.3%;
+    }
+}
+
+@media screen and (min-width: 800px) {    
+    .featured-image {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+

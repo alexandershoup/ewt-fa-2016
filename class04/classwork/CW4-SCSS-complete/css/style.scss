@@ -1,0 +1,181 @@
+@import 'lib';
+@import 'colors';
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html, body {
+  background: $dark-red;;
+  font-size: 62.5%;
+  margin: 1rem 0;
+}
+
+a {
+  @include transition;
+  color: $blue;
+
+  &:hover {
+    color: lighten($blue, 15%);
+  }
+}
+
+.wrapper {
+  @include transition;
+  background: lighten($black, 13%);
+  color: darken($white, 3%);
+  width: 300px;
+  margin: 0 auto 2rem;
+  font: 1.6rem/1.5 'Open Sans', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.header-site {
+  background-image: url('banner.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100px;
+
+  h1 {
+    @include transition;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px $black, -2px -2px 0px $black;
+    line-height: 100px;
+    font-weight: 800;
+    letter-spacing: 0.4rem;
+  }
+}
+
+.content {
+  padding: 1rem 0;
+
+  p {
+    margin: 2rem 0;
+  }
+}
+
+.text {
+  @include transition;
+  padding: 1rem 2rem;
+}
+
+.factoid {
+  @extend %callout-base;
+  background: lighten($yellow, 15%);
+  color: $black;
+  border-color: $yellow;
+}
+
+.alert {
+  @extend %callout-base;
+  border-color: $dark-red;
+  background: lighten($dark-red, 15%);
+  color: $white;
+}
+
+.figure {
+  @include transition;
+  width: 280px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
+    color: lighten($black, 47%);
+  }
+}
+
+footer {
+  text-align: center;
+}
+
+.group {
+  @include clearfix();
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 2rem 0 4rem;
+
+    &:before,
+    &:after {
+      color: $yellow;
+      opacity: 0.6;
+      vertical-align: 0.3rem;
+    }
+
+    &:before {
+      content: '\2208';
+      padding-right: 5px;
+    }
+
+    &:after {
+      content: '\220B';
+      padding-left: 5px;
+    }
+  }
+}
+
+@media (min-width: $breakTablet) {
+  .wrapper {
+    width: $breakTablet;
+  }
+
+  .header-site {
+    background-image: url('banner-tablet.jpg');
+    height: 200px;
+
+    h1 {
+      font-size: 5rem;
+      line-height: 200px;
+    }
+  }
+
+  .text-bio {
+    float: right;
+    width: 398px;
+  }
+
+  .text-death {
+    float: left;
+    width: 398px;
+  }
+
+  .figure {
+    float: left;
+    width: 350px;
+  }
+}
+
+@media (min-width: $breakDesktop) {
+  .wrapper {
+    width: $breakDesktop;
+  }
+
+  .header-site {
+    background-image: url('banner-desktop.jpg');
+    height: 400px;
+
+    h1 {
+      font-size: 7rem;
+      line-height: 400px;
+    }
+  }
+
+  .text {
+    width: 600px;
+  }
+
+  .figure {
+    width: 400px;
+  }
+}

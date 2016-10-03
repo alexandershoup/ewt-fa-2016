@@ -1,0 +1,43 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  transition: all 0.2s ease;
+  color: #5c94af; }
+  a:hover {
+    color: #70B5D7; }
+
+.figure {
+  transition: all 0.2s ease;
+  width: 280px;
+  margin: 0 auto; }
+  .figure img {
+    width: 100%; }
+  .figure figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #777; }
+
+.content {
+  padding: 1rem 0; }
+  .content p {
+    margin: 2rem 0; }
+
+.header-site {
+  background-image: url("banner.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100px; }
+  .header-site h1 {
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000, -2px -2px 0px #000;
+    line-height: 100px;
+    font-weight: 800;
+    letter-spacing: 0.4rem; }
+
+/*# sourceMappingURL=style.css.map */

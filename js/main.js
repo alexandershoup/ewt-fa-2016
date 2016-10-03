@@ -10,15 +10,29 @@ async: false
     var level = 0;
     var pagecontent = [];
 
+
+    // submitHelper(data, 0);
+    //
+    //
+    // function submitHelper(data, pos) {
+    //   if (pos >= data.length) {
+    //     return;
+    //   }
+    //   $.getJSON(..., done: function(itemData) {
+    //
+    //     submitHelper(data, pos++);
+    //     }
+
+
 function pageLoader(data) {
-    var brk = document.createElement('br');
-    document.querySelector('.page-content').appendChild(brk);
-console.log(level);
+    // var brk = document.createElement('br');
+    // document.querySelector('.page-content').appendChild(brk);
+    // console.log(level);
     console.log(data);
-    level = 0;
+    // level = 0;
     for (var i = 0; i < data.length; i++) {
         pagecontent[pagecontent.length] = data[i].name;
-        level++;
+        // level++;
         var item = data[i];
         console.log(item);
         var container = document.createElement('div');
@@ -28,14 +42,19 @@ console.log(level);
         }
         html_link.href = item.html_url;
         html_link.innerText = item.name;
+        if (item.type == 'dir') {
+            html_link.innerText += "/";
+            // var indent = document.createElement('span');
+            // indent.innerText = "\n" + " " + " ";
+            // document.querySelector('.page-content').appendChild(indent);
+        }
         var headline = document.createElement('h3');
         headline.appendChild(html_link);
         container.appendChild(headline);
         document.querySelector('.page-content').appendChild(container);
-
         if (item.type == 'dir') {
-            // level++;
             $.getJSON(item.url, pageLoader);
         }
     }
+    level++;
 }
