@@ -3,7 +3,7 @@ $(document).ready(function () {
     $.getJSON(url, pageLoader);
 });
 
-var token = "?access_token=2e101ffdd2a7af4d0c24765ff0e4990cc11c39c3";
+var token = "";
 
 $.ajaxSetup({
 async: false
