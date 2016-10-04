@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    var url = 'https://api.github.com/repos/alexandershoup/ewt-fa-2016/contents/';
+    var url = 'https://api.github.com/repos/alexandershoup/ewt-fa-2016/contents' + token;
     $.getJSON(url, pageLoader);
 });
+
+var token = "?access_token=2e101ffdd2a7af4d0c24765ff0e4990cc11c39c3";
 
 $.ajaxSetup({
 async: false
@@ -28,13 +30,13 @@ function pageLoader(data) {
     // var brk = document.createElement('br');
     // document.querySelector('.page-content').appendChild(brk);
     // console.log(level);
-    console.log(data);
+    // console.log(data);
     // level = 0;
     for (var i = 0; i < data.length; i++) {
         pagecontent[pagecontent.length] = data[i].name;
         // level++;
         var item = data[i];
-        console.log(item);
+        // console.log(item);
         var container = document.createElement('div');
         var html_link = document.createElement('a');
         if (item.type == 'file') {
@@ -51,10 +53,15 @@ function pageLoader(data) {
         var headline = document.createElement('h3');
         headline.appendChild(html_link);
         container.appendChild(headline);
+        container.className = "_" + level;
         document.querySelector('.page-content').appendChild(container);
         if (item.type == 'dir') {
-            $.getJSON(item.url, pageLoader);
+            level++;
+            var url = item.url;
+            url = url.slice(0, url.length-11)
+            // console.log(url);
+            $.getJSON((url + token), pageLoader);
+            level = level - 1;
         }
     }
-    level++;
 }

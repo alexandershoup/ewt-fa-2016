@@ -2,15 +2,71 @@
     font-family: monospace;
 }
 
-h4  {
+/*h4  {
     margin-left: 1em;
 }
 
 h5 {
     margin-left: 2em;
+}*/
+
+div {
+    padding-left: 2em;
 }
 
 .page-content {
-    background-color: LightSalmon;
+    /*background-color: LightSalmon;*/
     width: 100%;
+}
+
+._0 a {
+    background-color: red;
+}
+
+._1 {
+    margin-left: 2em;
+}
+
+._1 a {
+    background-color: orange;
+}
+
+._2 {
+    margin-left: 4em;
+}
+
+._2 a {
+    background-color: green;
+}
+
+._3 {
+    margin-left: 6em;
+}
+
+._3 a {
+    background-color: blue;
+}
+
+._4 {
+    margin-left: 8em;
+}
+
+._4 a {
+    background-color: indigo;
+}
+
+._5 {
+    margin-left: 10em;
+}
+
+._5 a {
+    background-color: violet;
+}
+
+a {
+    color: black;
+}
+
+div:hover a {
+    background-color: white;
 }
