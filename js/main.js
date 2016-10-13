@@ -65,3 +65,42 @@ function pageLoader(data) {
         }
     }
 }
+
+
+
+
+// 
+//
+// function treeLoader(data) {
+//     var tree = data.tree;
+//     console.log(tree);
+//     for (var i = 0; i < tree.length; i++) {
+//         // pagecontent[pagecontent.length] = data[i].name;
+//         // level++;
+//         var item = tree[i];
+//         console.log(item);
+//         var container = document.createElement('div');
+//         var html_link = document.createElement('a');
+//         // if (item.type == 'tree') {
+//         //     html_link.href = item.url;
+//         // }
+//         html_link.href = item.url + token;
+//         html_link.innerText = item.path;
+//         if (item.type == 'tree') {
+//             html_link.innerText += "/";
+//             // var indent = document.createElement('span');
+//             // indent.innerText = "\n" + " " + " ";
+//             // document.querySelector('.page-content').appendChild(indent);
+//         }
+//         var headline = document.createElement('h3');
+//         headline.appendChild(html_link);
+//         container.appendChild(headline);
+//         container.className = "_" + level;
+//         document.querySelector('.page-content').appendChild(container);
+//         if (item.type == 'tree') {
+//             level++;
+//             $.getJSON((item.url + token), treeLoader);
+//             level--;
+//         }
+//     }
+// }

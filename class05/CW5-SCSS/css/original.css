@@ -1,0 +1,37 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+
+
+@media (min-width: 760px) {
+    .page-content {
+        transition: background-color 0.5s ease;
+        background: #dedede;
+    }
+
+    .page-content .container {
+        background: #fff;
+        width: 760px;
+        margin: 0 auto;
+    }
+
+    .feature-list:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .feature {
+        float: left;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .page-content .container {
+        width: 1000px;
+    }
+
+    .feature-poster {
+        width: 100%;
+    }
+}
