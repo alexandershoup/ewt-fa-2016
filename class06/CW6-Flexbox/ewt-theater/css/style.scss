@@ -37,6 +37,9 @@ a {
     border-radius: 6px;
     transition: all 0.2s ease;
     margin: 0 auto;
+    height:38px;
+    align-self: flex-end;
+    
 
     &:hover {
         background-color: darken(#469B50, 15%);
@@ -146,14 +149,24 @@ a {
             width: $breakDesktop;
         }
     }
+    .feature-list{
+        display: flex;
+        flex-wrap: wrap;
+      
+        
+    }
 
     .feature {
-        float: left;
+        display: flex;
         width: 50%;
+        flex-wrap: wrap;
+        justify-content: center;
+     
 
         /* make every other .feature clears the previous 2 floated .features */
         &:nth-child(2n+1) {
-            clear: left;
+            display: flex;
+           
         }
     }
 

@@ -93,6 +93,8 @@ body {
     margin: 0 auto; }
 
   .cards {
+    display: flex;
+    flex-wrap: wrap;
     width: 600px;
     margin: 20px auto 0; }
     .cards:after {
@@ -101,7 +103,7 @@ body {
       content: ''; }
 
   .card {
-    float: left;
+    display: flex;
     margin: 0 20px 40px; } }
 @media (min-width: 1000px) {
   .wrapper {

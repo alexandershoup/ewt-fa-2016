@@ -60,8 +60,14 @@ ul, ol {
 .nav {
     ul {
         border: 1px solid black;
+        display: flex;
+        li{
+            flex-grow: 1;
+        }
     }
+   
 }
+
 
 .toggleNav {
     display: none;

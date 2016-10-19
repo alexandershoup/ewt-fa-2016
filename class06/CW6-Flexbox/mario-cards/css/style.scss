@@ -21,6 +21,7 @@ body {
 
 .container {
     padding: $baseUnit 0;
+    
 }
 
 .suit-image {
@@ -100,6 +101,7 @@ body {
 
 @media (min-width: $breakTablet) {
     .wrapper {
+       
         @include gradient(lighten($colorPrimary, 20%), darken($colorPrimary, 10%));
     }
 
@@ -109,6 +111,8 @@ body {
     }
 
     .cards {
+        display: flex;
+        flex-wrap: wrap;
         width: 600px;
         margin: $baseUnit auto 0;
 
@@ -120,7 +124,7 @@ body {
     }
 
     .card {
-        float: left;
+        display: flex;
         margin: 0 $baseUnit ($baseUnit * 2);
     }
 }
