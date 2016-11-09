@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 2 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+    class CheckMe extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                checked: false,
+                style: {visibility:'hidden'}
+            };
+        }
+
+        onClick() {
+            this.setState({
+                checked: !this.state.checked,
+                style: (this.state.checked) ? {visibility:'hidden'} : {}
+            });
+        }
+
+        render() {
+            return (
+                // <div className={this.state.imageclass + this.state.imagedark[this.state.active]} onClick={this.onClick.bind(this)}>
+                //     <img src={this.state.imagesource[this.state.active]} />
+                // </div>
+
+                 <div>
+                   <input className="checkbox" type="checkbox" checked={this.state.checked} onClick={this.onClick.bind(this)} />
+                   <h2 className="message" style={this.state.style} >I'm checked!</h2>
+                 </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<CheckMe/>, document.querySelector('.app'));
+
+      // 1. Create a <CheckMe/> component with a default state for "checked" as false
+      // 2. Add the following markup:
+      //  <div>
+      //    <input className="checkbox" type="checkbox"/>
+      //    <h2 className="message">I'm checked!</h2>
+      //  </div>
+      // 3. The <h2/> element should only show when the checkbox is checked. Add an onClick event to the input tag to toggle the state from checked beween true and false.
+      // 4. Render using ReactDOM.
+    </script>
+  </body>
+</html>

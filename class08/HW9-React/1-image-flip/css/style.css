@@ -1,0 +1,12 @@
+.image-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .image-wrapper:hover {
+    cursor: pointer; }
+
+.dark {
+  background: #111; }
+
+/*# sourceMappingURL=style.css.map */

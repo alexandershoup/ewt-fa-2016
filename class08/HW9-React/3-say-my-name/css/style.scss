@@ -1,0 +1,28 @@
+body {
+  font-family: helvetica, serif;
+  margin: 2rem;
+}
+
+.app {
+  height: calc(100vh - 4rem);
+  padding: 2rem;
+  background: #eee;
+}
+
+.greeting {
+  text-align: center;
+
+  &__input {
+    font-size: 5rem;
+    border: none;
+    text-align: center;
+    color: #777;
+    border: 1rem solid #ddd;
+  }
+
+  &__message {
+    margin-top: 10rem;
+    font-size: 10rem;
+    border-bottom: 2rem solid yellow;
+  }
+}

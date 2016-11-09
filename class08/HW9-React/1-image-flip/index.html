@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 2 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+    class Image extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                imagesource: ['./images/sun.jpg','./images/moon.jpg'],
+                imageclass: ['image-wrapper'],
+                imagedark: ['',' dark'],
+                active: 0
+            };
+        }
+
+        onClick() {
+            this.setState({
+                active: (this.state.active + 1) % 2
+            });
+        }
+
+        render() {
+            return (
+                <div className={this.state.imageclass + this.state.imagedark[this.state.active]} onClick={this.onClick.bind(this)}>
+                    <img src={this.state.imagesource[this.state.active]} />
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<Image/>, document.querySelector('.app'));
+
+    // 1. Create a stateful component named <Image/> with a wrapping div with className of "image-wrapper"
+    //  <div className='image-wrapper'>
+    //    <img ... />
+    //  </div>
+    //
+    // 2. Render images/sun.jpg by default
+    // 3. When clicking on the image render images/moon.jpg and add the .dark class to the .image-wrapper
+    //    so that the background is flipping through dark and light depending on the images
+    // 4. Use ReactDOM to render component to .app
+
+
+    </script>
+</body>
+</html>
