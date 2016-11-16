@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 2 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+</head>
+<body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+
+    class Artist extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                data: ""
+            }
+        }
+        componentWillMount() {
+            fetch(`https://api.discogs.com/artists/${this.props.id}/releases`)
+             .then(response => response.json().then(data => this.setState({data:data})));        }
+        render() {
+            if (!this.state.data) {
+                return <div className='loader'></div>
+            } else
+            return (
+                <div className='artist'>
+                <h1 className='artist__name' >{this.state.data.releases[this.state.data.releases.length-1].artist}</h1>
+                {this.state.data.releases.map((item, index) =>
+                    <Release key={index} title={item.title} url={`https://www.discogs.com/${this.props.id}/release/${item.id}`} />
+                )
+            }
+                </div>
+        )
+    }
+}
+
+class Release extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+    }
+
+    render() {
+        return (
+            <h2 className='artist__release'>
+                <a href={this.props.url}>{this.props.title}</a>
+            </h2>
+            // <div className="greeting">
+            // <input className="greeting__input" type="text" onKeyUp={this.onKeyUp.bind(this)} />
+            // <h2 style={this.state.style} className="greeting__message">Hello, {this.state.name}!</h2>
+            // </div>
+        );
+    }
+}
+
+
+ReactDOM.render(<Artist id="227848" />, document.querySelector('.app'));
+
+
+</script>
+</body>
+</html>
