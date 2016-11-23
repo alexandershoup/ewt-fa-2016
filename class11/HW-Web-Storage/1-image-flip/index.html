@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 2 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+      // store the image in localstorage after it's been set to state
+      // so that on a page refresh it will not change to the moon
+
+      class Image extends React.Component {
+        constructor() {
+          super();
+          if (!localStorage.getItem('state.image')) {
+              this.state = {
+                  image: 'sun'
+              }
+          } else {
+          this.state = {
+              image: (localStorage.getItem('state.image'))
+          }
+        }
+    }
+
+        onClick() {
+          this.setState({
+            image: this.state.image === 'sun' ? 'moon' : 'sun'
+
+          })
+        }
+
+        render() {
+          const className = 'image-wrapper' + (this.state.image === 'moon' ? ' dark' : '');
+          localStorage.setItem('state.image', this.state.image);
+
+          return (
+            <div onClick={this.onClick.bind(this)} className={className}>
+              <img src={'images/' + this.state.image + '.jpg'}/>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Image/>, document.querySelector('.app'));
+    </script>
+  </body>
+</html>

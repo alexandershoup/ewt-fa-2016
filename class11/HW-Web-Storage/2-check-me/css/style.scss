@@ -1,0 +1,25 @@
+body {
+  font-family: helvetica, serif;
+  margin: 2rem;
+}
+
+.app {
+  height: calc(100vh - 8rem);
+  padding: 2rem;
+  background: #eee;
+  text-align: center;
+}
+
+.checkbox {
+  zoom: 3;
+  border: none;
+  text-align: center;
+  color: #777;
+  border: 1rem solid #ddd;
+}
+
+.message {
+  margin-top: 10rem;
+  font-size: 10rem;
+  border-bottom: 2rem solid yellow;
+}

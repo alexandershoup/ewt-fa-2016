@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 2 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+
+    <script type="text/babel">
+      // store the name on sessionStorage so that on a refresh
+      // we see the name on the page. When we exit the browser and revisit
+      // we should start from scratch again
+
+      class Greeting extends React.Component {
+        constructor() {
+          super();
+          this.state = {};
+        }
+
+        onKeyUp(event) {
+          this.setState({
+            name: event.target.value
+          });
+        }
+
+        render() {
+          return (
+             <div className="greeting">
+               <input className="greeting__input" type="text" onKeyUp={this.onKeyUp.bind(this)}/>
+               {this.state.name && <h2 className="greeting__message">Hello, {this.state.name}!</h2>}
+             </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Greeting/>, document.querySelector('.app'));
+    </script>
+  </body>
+</html>
