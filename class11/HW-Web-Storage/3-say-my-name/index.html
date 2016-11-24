@@ -22,19 +22,27 @@
       class Greeting extends React.Component {
         constructor() {
           super();
-          this.state = {};
+          if (!sessionStorage.getItem('state.name')) {
+              this.state = {
+              };
+          } else {
+              this.state = {
+                  name: sessionStorage.getItem('state.name')
+              }
+      }
         }
 
         onKeyUp(event) {
           this.setState({
             name: event.target.value
           });
+          sessionStorage.setItem('state.name', event.target.value);
         }
 
         render() {
           return (
              <div className="greeting">
-               <input className="greeting__input" type="text" onKeyUp={this.onKeyUp.bind(this)}/>
+               <input className="greeting__input" type="text" defaultValue={this.state.name} onKeyUp={this.onKeyUp.bind(this)}/>
                {this.state.name && <h2 className="greeting__message">Hello, {this.state.name}!</h2>}
              </div>
           );
